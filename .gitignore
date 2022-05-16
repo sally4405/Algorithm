@@ -4,7 +4,7 @@ Alice/kakao
 monthly code challenge season1/
 line/
 .vscode/
-
+*/*.playground/contents.xcplayground
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode
