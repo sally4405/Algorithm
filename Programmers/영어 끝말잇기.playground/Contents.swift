@@ -1,23 +1,17 @@
 import Foundation
 
 func solution(_ n:Int, _ words:[String]) -> [Int] {
-    var wordSet: Set<String> = []
-    var lastChar = words.first?.first
+    if words.first!.count == 0 { return [1, 1] }
+    var wordCheck: Set<String> = [words.first!]
 
-    for word in words {
-        if word.count == 1 { break }
-        if word.first != lastChar { break }
-        if wordSet.contains(word) { break }
-
-        wordSet.insert(word)
-        lastChar = word.last
+    for i in 1..<words.count {
+        if (words[i].count == 1 || words[i-1].last! != words[i].first! || wordCheck.contains(words[i])) {
+            return [i % n + 1, i / n + 1]
+        }
+        wordCheck.insert(words[i])
     }
 
-    if words.count == wordSet.count { return [0, 0] }
-
-    let num = (wordSet.count + 1) % n
-    let order = ceil(Double(wordSet.count + 1) / Double(n))
-    return [num == 0 ? n : num, Int(order)]
+    return [0, 0]
 }
 
 let n1 = 3
