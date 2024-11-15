@@ -3,8 +3,10 @@ kakao/
 Alice/kakao
 monthly code challenge season1/
 line/
+Test/
 .vscode/
 */*.playground/contents.xcplayground
+test*.playground
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/swift,xcode
